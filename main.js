@@ -27,8 +27,9 @@ const container = document.getElementById("main-container");
 const input = document.getElementById("userInput");
 
 function newTaskEntered() {
-  storeData();
-
+    if (input.value !== "") {
+        storeData();
+    }
 }
 function storeData() {
     db.collection("tasks").add({
